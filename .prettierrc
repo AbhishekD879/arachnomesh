@@ -1,0 +1,18 @@
+{
+    "arrowParens": "avoid",
+    "singleQuote": true,
+    "trailingComma": "all",
+    "bracketSpacing": false,
+    "bracketSameLine": true,
+    "overrides": [
+      {
+        "files": ["*.js"],
+        "options": {
+          "parser": "flow"
+        }
+      },
+      {
+        "files": ["*.js", "*.jsx"]
+      }
+    ]
+  }
