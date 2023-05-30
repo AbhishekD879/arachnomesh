@@ -1,0 +1,62 @@
+.promo-container{
+    width: 100%;
+    height: calc(100vh - 4.75rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    position: relative;
+}
+.elipse{
+    width: 10rem;
+    height:10rem;
+    border-radius: 50%;
+    border: 1px solid #13395B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bottle-cap {
+    position: absolute;
+    animation-iteration-count: 1;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 1;
+    animation-fill-mode: forwards;
+    animation-name:bottle-close-animation ;
+    z-index: 2;
+}
+
+.bottle-bottom {
+    position: absolute;
+    bottom: -40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    z-index: 1;
+}
+
+@keyframes bottle-close-animation {
+    0%{
+        /* transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0); */
+        top:0
+}
+    100%{
+        /* transform: translateY(100%);
+        -webkit-transform: translateY(100%);
+        -moz-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+        -o-transform: translateY(100%); */
+        /* top: auto; */
+        top: 51%;
+}
+}
+
+
