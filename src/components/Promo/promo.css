@@ -17,55 +17,85 @@
   transform: translate(-50%, -50%);
   border-radius: 50%;
   min-width: 15%;
-  border: 4px solid #13395b;
+  border: 3px solid #13395b;
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: ellipse-size-increase 3s ease-in-out forwards;
+  animation: ellipse-size-increase 1.5s ease-out forwards;
+  -webkit-animation: ellipse-size-increase 1.5s ease-out forwards;
 }
 
 .bottle-cap {
   position: absolute;
   top: 15%;
   left: 50%;
-  transform: translate(-50%,-50%);
-  /*animation-iteration-count: 1;
-  animation-duration: 3s;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
-  animation-name: bottle-close-animation;
-  */z-index: 2;
-  animation: bottle-close-animation 3s ease-in forwards,cap-down-with-bottle 1s 3s ease-out forwards;
-  -webkit-transform: translate(-50%,-50%);
-  -moz-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  -o-transform: translate(-50%,-50%);
-  -webkit-animation: bottle-close-animation 3s ease-in forwards,cap-down-with-bottle 1s 3s ease-out fo;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  animation: bottle-close-animation 1s ease-out forwards,
+    cap-down-with-bottle 1s 1s ease-out forwards;
+  -webkit-animation: bottle-close-animation 1s ease-out forwards,
+    cap-down-with-bottle 1s 1s ease-out forwards;
 }
 
 .bottle-bottom {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: fit-content;
-    animation: bottle-bottom-translate-down-animation 1s 3s ease-out forwards;
-    z-index: 1;
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    -webkit-animation: bottle-bottom-translate-down-animation 1s 3s ease-out forwards;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: fit-content;
+  z-index: 1;
+  animation: bottle-bottom-translate-down-animation 1s 1s ease-out forwards;
+  -webkit-animation: bottle-bottom-translate-down-animation 1s 1s ease-out
+    forwards;
+}
+
+.bottle-cap,
+.bottle-bottom {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.elipse-text {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #13395b;
+  animation: text-appear 1.5s 1s ease-out forwards;
+  -webkit-animation: text-appear 1.5s 1s ease-out forwards;
+  text-align: center;
+  white-space: nowrap;
+  font-family: 'Inter';
+  opacity: 0;
+  transform: scale(0);
+  letter-spacing: 0.2rem;
+}
+.elipse-text > span {
+  display: block;
+  color: #333333;
+  font-size: 1rem;
+  white-space: nowrap;
+  font-weight: 500;
+  margin-top: 4%;
+  line-height: 19px;
+  letter-spacing: normal;
+}
+
+.know-more{
+  position: absolute;
+  top: 60%;
+  z-index: 0;
+  opacity: 0;
+  animation: button-up-know-more 1s ease-out 1s forwards;
+  -webkit-animation: button-up-know-more 1s ease-out 1s forwards;
 }
 
 @keyframes ellipse-size-increase {
-
-   from{
+  from {
     width: 15%;
-   }
-   to{
-    width: 30%;
-   } 
+  }
+  to {
+    width: 20%;
+  }
 }
 
 @keyframes bottle-close-animation {
@@ -73,24 +103,84 @@
     top: 15%;
   }
   to {
-    top: 58%;
+    top: 55%;
   }
 }
 
 @keyframes cap-down-with-bottle {
   0% {
-    top: 58%;
+    top: 55%;
   }
   100% {
-    top: 72%;
+    top: 71%;
+  }
+}
+@keyframes text-appear {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes bottle-bottom-translate-down-animation {
+  from {
+    bottom: 0;
+  }
+  to {
+    bottom: -14%;
   }
 }
 
-@keyframes bottle-bottom-translate-down-animation {
-  from{
-    bottom: 0;
+@keyframes button-up-know-more {
+  from {
+   top: 60%;
+   opacity: 1;
   }
-  to{
-    bottom: -15%;
+  to {
+   top: 48%;
+   opacity: 1;
+  }
+}
+.promo-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .promo-container {
+    height: calc(100vh - 3.5rem);
+  }
+
+  .elipse {
+    top: 30%;
+  }
+
+  .bottle-cap {
+    top: 10%;
+  }
+
+  .bottle-bottom {
+    animation-delay: 2s;
+  }
+}
+
+@media (max-width: 480px) {
+  .promo-container {
+    height: calc(100vh - 3rem);
+  }
+
+  .elipse {
+    top: 25%;
+  }
+
+  .bottle-cap {
+    top: 8%;
+  }
+
+  .bottle-bottom {
+    animation-delay: 2.5s;
   }
 }
