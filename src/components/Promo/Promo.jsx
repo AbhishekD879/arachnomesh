@@ -3,8 +3,8 @@ import './promo.css'
 import bottleCapSvg from './../../assets/promo-cap.svg'
 import bottleBottom from "./../../assets/promo-bottle.svg"
 const dynamicSvgAspectRatio={
-    width:'75%',
-    height:'40%'
+    width:'100%',
+    height:'100%'
 }
 const BottleCap =()=>{
     return(

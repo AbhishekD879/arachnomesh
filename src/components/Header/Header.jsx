@@ -3,7 +3,7 @@ import './header.css';
 const HeaderRight = () => {
   return (
     <a className="header-right" href="/">
-      ARACHNOMESH
+      {/* ARACHNOMESH */}
     </a>
   );
 };
