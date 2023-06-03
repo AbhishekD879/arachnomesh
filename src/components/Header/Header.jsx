@@ -18,10 +18,7 @@ const HeaderLeft = () => {
       <ul className="header-left-nav">
         {nav.map((item, index) => (
           <li className="header-left-item" key={item}>
-            <a
-              className={`${currentTab === item && 'nav-selected'}`}
-              href="/"
-            >
+            <a className={`${currentTab === item && 'nav-selected'}`} href="/">
               {item}
             </a>
           </li>

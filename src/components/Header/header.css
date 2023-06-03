@@ -1,85 +1,84 @@
 .header-right {
-    text-transform: uppercase;
-    color: #13395b;
-    font-weight: 900;
-    font-family: 'Lato', sans-serif;
-    font-size: 1.5rem;
-    flex: 0.6;
+  text-transform: uppercase;
+  color: #13395b;
+  font-weight: 900;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.5rem;
+  flex: 0.6;
+}
+
+.header-left-item {
+  list-style-type: none;
+  margin-left: 1rem;
+}
+
+.header-left-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-selected {
+  opacity: 1 !important;
+}
+
+.header-left-item > a {
+  text-transform: uppercase;
+  color: #1d1b19;
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 1rem;
+  text-decoration: none;
+  opacity: 0.5;
+}
+
+.header-left {
+  display: flex;
+  justify-content: space-evenly;
+  flex: 0.4;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: 1.25rem;
+  align-items: center;
+}
+
+.btn {
+  border-radius: 6px;
+  background: linear-gradient(180deg, #e9c46b 0%, #f3a261 100%);
+  font-family: 'Roboto', serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.5rem 1.55rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.btn:hover {
+  background: linear-gradient(180deg, #f3a261 0%, #e9c46b 100%);
+}
+
+@media (max-width: 768px) {
+  .header-left {
+    display: none;
   }
-  
-  .header-left-item {
-    list-style-type: none;
+
+  .header-right {
+    flex: 1;
+    text-align: center;
+  }
+
+  .btn.login {
     margin-left: 1rem;
   }
-  
-  .header-left-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .nav-selected {
-    opacity: 1 !important;
-  }
-  
-  .header-left-item > a {
-    text-transform: uppercase;
-    color: #1d1b19;
-    font-family: 'Lato', sans-serif;
-    font-style: normal;
-    font-weight: 800;
-    font-size: 1rem;
-    text-decoration: none;
-    opacity: 0.5;
-  }
-  
-  .header-left {
-    display: flex;
-    justify-content: space-evenly;
-    flex: 0.4;
-  }
-  
+
   .header {
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-    padding: 1.25rem;
-    align-items: center;
+    padding: 1rem;
   }
-  
-  .btn {
-    border-radius: 6px;
-    background: linear-gradient(180deg, #e9c46b 0%, #f3a261 100%);
-    font-family: 'Roboto', serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 1rem;
-    padding: 0.5rem 1.55rem;
-    cursor: pointer;
-    border: none;
-    outline: none;
-  }
-  
-  .btn:hover {
-    background: linear-gradient(180deg, #f3a261 0%, #e9c46b 100%);
-  }
-  
-  @media (max-width: 768px) {
-    .header-left {
-      display: none;
-    }
-  
-    .header-right {
-      flex: 1;
-      text-align: center;
-    }
-  
-    .btn.login {
-      margin-left: 1rem;
-    }
-  
-    .header {
-      padding: 1rem;
-    }
-  }
-  
+}
