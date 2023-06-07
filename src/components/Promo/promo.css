@@ -1,6 +1,30 @@
+:root {
+  --ellipse-start-width: 15%;
+  --ellipse-end-width: 20%;
+  --ellipse-initial-top: 35%;
+
+  --bottle-cap-start-top: 15%;
+  --bottle-cap-end-top: 55%;
+  --bottle-cap-initial-top: 15%;
+
+  --cap-down-start-top: 55%;
+  --cap-down-end-top: 71%;
+
+  --bottle-bottom-start-bottom: 5%;
+  --bottle-bottom-end-bottom: -10%;
+  --bottle-bottom-initial-bottom: 0;
+
+  --button-start-top: 60%;
+  --button-end-top: 48%;
+  --button-initial-top: 60%;
+
+  --header-height: 4.75rem;
+}
+
 .promo-container {
   width: 100%;
-  height: calc(100vh - 4.75rem);
+  /* height: calc(100vh - var(--header-height)); */
+  height: 100dvh;
   display: flex;
   text-align: center;
   justify-content: center;
@@ -12,7 +36,7 @@
 .elipse {
   aspect-ratio: 1/1;
   position: absolute;
-  top: 35%;
+  top: var(--ellipse-initial-top);
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
@@ -22,31 +46,48 @@
   justify-content: center;
   align-items: center;
   animation: ellipse-size-increase 1.5s ease-out forwards;
-  -webkit-animation: ellipse-size-increase 1.5s ease-out forwards;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
 }
 
 .bottle-cap {
   position: absolute;
-  top: 15%;
+  aspect-ratio: 2/1;
+  top: var(--bottle-cap-initial-top);
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
   animation: bottle-close-animation 1s ease-out forwards,
     cap-down-with-bottle 1s 1s ease-out forwards;
-  -webkit-animation: bottle-close-animation 1s ease-out forwards,
-    cap-down-with-bottle 1s 1s ease-out forwards;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
 }
 
 .bottle-bottom {
+  aspect-ratio: 1/2;
   position: absolute;
-  bottom: 0;
+  bottom: var(--bottle-bottom-initial-bottom);
   left: 50%;
   transform: translateX(-50%);
   width: fit-content;
   z-index: 1;
   animation: bottle-bottom-translate-down-animation 1s 1s ease-out forwards;
-  -webkit-animation: bottle-bottom-translate-down-animation 1s 1s ease-out
-    forwards;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+
+.bottle-bottom > img {
+  aspect-ratio: 1/2;
+}
+
+.bottle-cap > img {
+  aspect-ratio: 2/1;
 }
 
 .bottle-cap,
@@ -56,12 +97,12 @@
   justify-content: center;
   align-items: center;
 }
+
 .elipse-text {
   font-size: 3.5rem;
   font-weight: 700;
   color: #13395b;
   animation: text-appear 1.5s 1s ease-out forwards;
-  -webkit-animation: text-appear 1.5s 1s ease-out forwards;
   text-align: center;
   white-space: nowrap;
   font-family: 'Inter';
@@ -69,6 +110,7 @@
   transform: scale(0);
   letter-spacing: 0.2rem;
 }
+
 .elipse-text > span {
   display: block;
   color: #333333;
@@ -80,41 +122,41 @@
   letter-spacing: normal;
 }
 
-.know-more{
+.know-more {
   position: absolute;
-  top: 60%;
+  top: var(--button-initial-top);
   z-index: 0;
   opacity: 0;
   animation: button-up-know-more 1s ease-out 1s forwards;
-  -webkit-animation: button-up-know-more 1s ease-out 1s forwards;
 }
 
 @keyframes ellipse-size-increase {
   from {
-    width: 15%;
+    width: var(--ellipse-start-width);
   }
   to {
-    width: 20%;
+    width: var(--ellipse-end-width);
   }
 }
 
 @keyframes bottle-close-animation {
   from {
-    top: 15%;
+    top: var(--bottle-cap-start-top);
   }
   to {
-    top: 55%;
+    top: var(--bottle-cap-end-top);
   }
 }
 
 @keyframes cap-down-with-bottle {
   0% {
-    top: 55%;
+    top: var(--cap-down-start-top);
   }
   100% {
-    top: 71%;
+    top: var(--cap-down-end-top);
   }
 }
+
 @keyframes text-appear {
   0% {
     opacity: 0;
@@ -125,41 +167,46 @@
     transform: scale(1);
   }
 }
+
 @keyframes bottle-bottom-translate-down-animation {
   from {
-    bottom: 0;
+    bottom: var(--bottle-bottom-start-bottom);
   }
   to {
-    bottom: -14%;
+    bottom: var(--bottle-bottom-end-bottom);
   }
 }
 
 @keyframes button-up-know-more {
   from {
-   top: 60%;
-   opacity: 1;
+    top: var(--button-start-top);
+    opacity: 0;
   }
   to {
-   top: 48%;
-   opacity: 1;
+    top: var(--button-end-top);
+    opacity: 1;
   }
 }
+
 .promo-container img {
   max-width: 100%;
   height: auto;
 }
 
 @media (max-width: 768px) {
+  :root {
+    --ellipse-initial-top: 30%;
+    --bottle-cap-initial-top: 10%;
+    --bottle-cap-start-top: 10%;
+    --bottle-cap-end-top: 50%;
+    --cap-down-start-top: 50%;
+    --cap-down-end-top: 66%;
+    --button-start-top: 55%;
+    --button-end-top: 43%;
+  }
+
   .promo-container {
     height: calc(100vh - 3.5rem);
-  }
-
-  .elipse {
-    top: 30%;
-  }
-
-  .bottle-cap {
-    top: 10%;
   }
 
   .bottle-bottom {
@@ -168,16 +215,19 @@
 }
 
 @media (max-width: 480px) {
+  :root {
+    --ellipse-initial-top: 25%;
+    --bottle-cap-initial-top: 8%;
+    --bottle-cap-start-top: 8%;
+    --bottle-cap-end-top: 48%;
+    --cap-down-start-top: 48%;
+    --cap-down-end-top: 64%;
+    --button-start-top: 50%;
+    --button-end-top: 38%;
+  }
+
   .promo-container {
     height: calc(100vh - 3rem);
-  }
-
-  .elipse {
-    top: 25%;
-  }
-
-  .bottle-cap {
-    top: 8%;
   }
 
   .bottle-bottom {

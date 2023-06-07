@@ -1,0 +1,197 @@
+:root {
+  --bottle1-size: 19%;
+  --bottle2-size: 25%;
+  --bottle3-size: 25%;
+  --bottle4-size: 15%;
+  --bottle-1-start-X: 30%;
+}
+
+.smart-sip-container {
+  width: 100%;
+  /* height: calc(100% - var(--header-height)); */
+  height: 100%;
+  overflow: hidden;
+  margin: 10% 0;
+}
+.smart-sip-container-inner {
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 70%;
+  background: linear-gradient(
+      180deg,
+      rgba(28, 91, 79, 0.2) 0%,
+      rgba(28, 142, 128, 0.2) 100%
+    ),
+    radial-gradient(
+        81.25% 325% at 14.27% 29.03%,
+        #565859 9.84%,
+        rgba(17, 24, 30, 0.98) 65.12%
+      )
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+}
+.smart-sip-title {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 5.5rem;
+  color: #ffffff;
+  z-index: 2;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  -webkit-transform: translate(-50%, 50%);
+  -moz-transform: translate(-50%, 50%);
+  -ms-transform: translate(-50%, 50%);
+  -o-transform: translate(-50%, 50%);
+}
+
+.sip-bottle {
+  position: absolute;
+}
+img.sip-bottle {
+  object-fit: contain;
+  z-index: 1;
+}
+
+.bottle-1 {
+  width: var(--bottle1-size);
+  bottom: 0;
+  left: 0;
+  /*transform: translate(0%, 5%);
+  -webkit-transform: translate(0%, 5%);
+  -moz-transform: translate(0%, 5%);
+  -ms-transform: translate(0%, 5%);
+  -o-transform: translate(0%, 5%);
+  */
+  transform: translate(-90%, 90%);
+  -webkit-transform: translate(-90%, 90%);
+  -moz-transform: translate(-90%, 90%);
+  -ms-transform: translate(-90%, 90%);
+  -o-transform: translate(-90%, 90%);
+}
+.bottle-2 {
+  width: var(--bottle2-size);
+  top: 0;
+  left: 20%;
+
+  transform: translate(20%, -90%);
+  -webkit-transform: translate(20%, -90%);
+  -moz-transform: translate(20%, -90%);
+  -ms-transform: translate(20%, -90%);
+  -o-transform: translate(20%, -90%);
+}
+.bottle-3 {
+  width: var(--bottle3-size);
+  bottom: 0;
+  left: 50%;
+  transform: translate(0%, 20%);
+  -moz-transform: translate(0%, 20%);
+  -ms-transform: translate(0%, 20%);
+  -o-transform: translate(0%, 20%);
+  -webkit-transform: translate(0%, 20%);
+}
+.bottle-4 {
+  width: var(--bottle4-size);
+  top: 0;
+  right: 0%;
+  transform: translate(0%, -15%);
+  -moz-transform: translate(0%, -15%);
+  -ms-transform: translate(0%, -15%);
+  -o-transform: translate(0%, -15%);
+  -webkit-transform: translate(0%, -15%);
+}
+
+@media (width<=1000px) {
+  .sip-bottle {
+    display: none;
+  }
+}
+
+@keyframes bottle-1-animation {
+  from {
+    transform: translate(-90%, 90%);
+    -webkit-transform: translate(-90%, 90%);
+    -moz-transform: translate(-90%, 90%);
+    -ms-transform: translate(-90%, 90%);
+    -o-transform: translate(-90%, 90%);
+  }
+  to {
+    transform: translate(0%, 5%);
+    -webkit-transform: translate(0%, 5%);
+    -moz-transform: translate(0%, 5%);
+    -ms-transform: translate(0%, 5%);
+    -o-transform: translate(0%, 5%);
+  }
+}
+
+@keyframes bottle-2-animation {
+  from {
+    transform: translate(20%, -90%);
+    -webkit-transform: translate(20%, -90%);
+    -moz-transform: translate(20%, -90%);
+    -ms-transform: translate(20%, -90%);
+    -o-transform: translate(20%, -90%);
+  }
+  to {
+    transform: translate(0%, -20%);
+    -moz-transform: translate(0%, -20%);
+    -ms-transform: translate(0%, -20%);
+    -o-transform: translate(0%, -20%);
+    -webkit-transform: translate(0%, -20%);
+  }
+}
+
+@keyframes bottle-3-animation {
+  from {
+    transform: translate(0%, 70%);
+    -moz-transform: translate(0%, 70%);
+    -ms-transform: translate(0%, 70%);
+    -o-transform: translate(0%, 70%);
+    -webkit-transform: translate(0%, 70%);
+  }
+  to {
+    transform: translate(0%, 20%);
+    -moz-transform: translate(0%, 20%);
+    -ms-transform: translate(0%, 20%);
+    -o-transform: translate(0%, 20%);
+    -webkit-transform: translate(0%, 20%);
+  }
+}
+
+@keyframes bottle-4-animation {
+  from {
+    transform: translate(80%, -80%);
+    -webkit-transform: translate(80%, -80%);
+    -moz-transform: translate(80%, -80%);
+    -ms-transform: translate(80%, -80%);
+    -o-transform: translate(80%, -80%);
+  }
+  to {
+    transform: translate(0%, -15%);
+    -moz-transform: translate(0%, -15%);
+    -ms-transform: translate(0%, -15%);
+    -o-transform: translate(0%, -15%);
+    -webkit-transform: translate(0%, -15%);
+  }
+}
+/*# sourceMappingURL=smart-sip.css.map */
+
+/* animation on scrollView */
+
+.bottle-1-animate {
+  animation: bottle-1-animation 1s ease forwards;
+  -webkit-animation: bottle-1-animation 1s ease forwards;
+}
+.bottle-2-animate {
+  animation: bottle-2-animation 1s ease forwards;
+}
+.bottle-3-animate {
+  animation: bottle-3-animation 1s ease forwards;
+  -webkit-animation: bottle-3-animation 1s ease forwards;
+}
+.bottle-4-animate {
+  animation: bottle-4-animation 1s ease forwards;
+  -webkit-animation: bottle-4-animation 1s ease forwards;
+}
