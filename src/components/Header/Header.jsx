@@ -1,29 +1,30 @@
 import React from 'react';
 import './header.css';
-
+import {Link} from "wouter"
 const HeaderRight = () => {
   return (
-    <a className="header-right" href="/">
+    <Link className="header-right" href="/">
       ARACHNOMESH
-    </a>
+    </Link>
   );
 };
 
 const HeaderLeft = () => {
   const [currentTab, setCurrentTab] = React.useState('Home');
-  const nav = ['Home', 'About', 'Bottles', 'Blog', 'Contact'];
+  const nav = ['Home', 'About', 'Bottles', 'Blog', 'product'];
 
   return (
     <div className="header-left">
       <ul className="header-left-nav">
         {nav.map((item, index) => (
           <li className="header-left-item" key={item}>
-            <a
+            <Link
               className={`${currentTab === item && 'nav-selected'}`}
               href="/"
+              to={`/${item}`}
             >
               {item}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

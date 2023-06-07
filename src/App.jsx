@@ -5,15 +5,24 @@ import ProductPage from './components/ProductPage/ProductPage';
 import Promo from './components/Promo/Promo';
 import SmartSip from './components/SmartSip/SmartSip';
 import Testimonials from './components/Testemonials/Testimonials';
+import {Route} from 'wouter';
+
+function LandingPage() {
+  return (
+    <>
+      <Promo />
+      <SmartSip />
+      <OurWork />
+      <Testimonials />
+    </>
+  );
+}
 
 function App() {
   return (
     <>
-      {/* <Promo/>
-      <SmartSip/>
-      <OurWork/>
-      <Testimonials/> */}
-      <ProductPage/>
+      <Route path='/' component={LandingPage} />
+      <Route path='/product' component={ProductPage} />
     </>
   );
 }

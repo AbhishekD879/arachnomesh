@@ -4,6 +4,7 @@ import searchIoc from '../../../assets/searchIoc.svg';
 import hpr1 from '../../../assets/hpr1.svg';
 import hpr2 from '../../../assets/hpr2.svg';
 import hpr3 from '../../../assets/hpr3.svg';
+import {Link} from 'wouter'
 const ProductHeader = () => {
   return (
     <div className="product-header flex justify-between items-center">
@@ -16,7 +17,9 @@ const ProductHeader = () => {
 const ProductHeaderLeft = () => {
   return (
     <div className="product-header-left flex justify-between">
-      <p>Arachnomesh</p>
+      <Link className="header-right" href="/">
+        ARACHNOMESH
+      </Link>
       <img src={searchIoc} alt="logo" />
     </div>
   );
