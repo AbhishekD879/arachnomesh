@@ -1,5 +1,5 @@
 import React from 'react'
-import './testimonials.css'
+import './Testimonials.css'
 import profile1 from './../../assets/profile1.svg'
 import profile2 from './../../assets/profile2.svg'
 import profile3 from './../../assets/profile3.svg'
