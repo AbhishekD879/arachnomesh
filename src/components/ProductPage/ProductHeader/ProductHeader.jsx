@@ -1,5 +1,5 @@
 import React from 'react';
-import './productHeader.css';
+import './ProductHeader.css';
 import searchIoc from '../../../assets/searchIoc.svg';
 import hpr1 from '../../../assets/hpr1.svg';
 import hpr2 from '../../../assets/hpr2.svg';
